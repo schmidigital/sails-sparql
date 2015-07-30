@@ -1,8 +1,8 @@
 {
-  "name": "sparql-adapter",
+  "name": "sails-sparql",
   "version": "0.10.0",
   "description": "sails-sparql adapter for Sails / Waterline",
-  "main": "adapter.js",
+  "main": "lib/adapter.js",
   "directories": {
     "test": "test"
   },
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@stash.schmidigital.de:7999/mb/sparql-adapter.git"
+    "url": "ssh://git@stash.schmidigital.de:7999/mb/sails-sparql.git"
   },
   "keywords": [
     "sails-sparql",
@@ -22,13 +22,19 @@
     "plugin"
   ],
   "dependencies": {
-    "request": "1.9.0",
-    "coffee-script": "1.2.x"
+	"async-each-object": "0.0.2",
+	"coffee-script": "1.2.x",
+	"request": "1.9.0",
+	"shortid": "^2.2.2",
+	"sparql": "^0.1.3",
+	"lodash": "*",
+	"async": "*"
   },
   "devDependencies": {
-    "waterline-adapter-tests": "~0.10.0",
-    "mocha": "*",
-    "captains-log": "~0.11.0"
+	"captains-log": "~0.11.0",
+	"colors": "^1.1.2",
+	"mocha": "*",
+	"waterline-adapter-tests": "~0.10.0"
   },
   "waterlineAdapter": {
     "type": "sails-sparql",
