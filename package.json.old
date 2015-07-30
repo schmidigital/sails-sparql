@@ -1,18 +1,12 @@
 {
-  "name": "sparql-adapter",
+  "name": "waterline-sails-sparql",
   "version": "0.10.0",
   "description": "sails-sparql adapter for Sails / Waterline",
   "main": "adapter.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/integration/runner -R spec -b"
   },
-  "repository": {
-    "type": "git",
-    "url": "ssh://git@stash.schmidigital.de:7999/mb/sparql-adapter.git"
-  },
+  "repository": {"type":"git","url":"git://github.com/balderdashy/waterline-%s.git"},
   "keywords": [
     "sails-sparql",
     "adapter",
@@ -21,6 +15,9 @@
     "sails.js",
     "plugin"
   ],
+  "author": "balderdashy",
+  "license": "MIT",
+  "readmeFilename": "README.md",
   "dependencies": {
     "request": "1.9.0",
     "coffee-script": "1.2.x"
@@ -37,7 +34,5 @@
       "queryable"
     ],
     "waterlineVersion": "~0.10.0"
-  },
-  "author": "mindbabble.com",
-  "license": "MIT"
+  }
 }
