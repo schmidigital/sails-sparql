@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/integration/runner -R spec -b"
   },
   "repository": {
     "type": "git",
@@ -42,8 +42,7 @@
   "waterlineAdapter": {
     "type": "sails-sparql",
     "interfaces": [
-      "semantic",
-      "queryable"
+      "semantic"
     ],
     "waterlineVersion": "~0.10.0"
   },

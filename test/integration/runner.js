@@ -66,7 +66,16 @@ new TestRunner({
 
     // Default adapter config to use.
     config: {
-        schema: false
+				database: 'test',
+				definition: 'test.schema',
+				adapter: 'sails-sparql',
+				host: 'localhost',
+				port: 5820,
+				schema: false,
+				prefix: {
+					abr: "mb:",
+					val: "http://rdf.mindbabble.com/ns/"
+				}
     },
 
     // The set of adapter interfaces to test against.
