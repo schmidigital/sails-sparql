@@ -10,7 +10,9 @@ var assert = require('assert');
 // Require Fixtures
 var fixtures = {
   UserFixture: require('./fixtures/element.js'),
-  ThingFixture: require('./fixtures/validations.fixture')
+  NodeFixture: require('./fixtures/node'),
+  ObjectFixture: require('./fixtures/object'),
+  SchemaFixture: require('./fixtures/schema_movie'),
 };
 
 

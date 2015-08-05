@@ -6,37 +6,44 @@ describe('Semantic Interface', function() {
 	describe('.find()', function() {
 
 		/////////////////////////////////////////////////////
-		// TEST SETUP
-		////////////////////////////////////////////////////
-
-		before(function(done) {
-
-			// Insert 10 Users
-			var users = [];
-
-			for(var i=0; i<10; i++) {
-				users.push({first_name: 'find_user' + i, type: 'find test', age: i*10 });  // include an integer field
-			}
-
-			Semantic.User.createEach(users, function(err, users) {
-				if(err) return done(err);
-				done();
-			});
-		});
-
-		/////////////////////////////////////////////////////
 		// TEST METHODS
 		////////////////////////////////////////////////////
 
-		it('should create a text object with inherited values from object', function(done) {
-			Semantic.Object.create({ type: 'schema_text',  }, function(err, users) {
-				assert(!err);
-				assert(Array.isArray(users));
-				assert.strictEqual(users.length, 10);
+		it('should create a node using 2 custom types.', function(done) {
+			Semantic.Node.create({
+				'object': {
+					'label': 'Fantastic Movie',
+					'description': "This is an awesome parody!"
+				},
+				'schema_movie': {
+					genre: 'Comedy',
+					popularity: 8
+				}
+			}, {
+				'custom_type': 'schema_movie'
+			}, function(err, node) {
+
 				done();
 			});
 		});
 
+
+		//it('should create a node using 1 type and its class inheritance.', function(done) {
+		//	Semantic.Node.create({
+		//		'object': {
+		//			'label': 'Fantastic Movie',
+		//			'description': "This is an awesome parody!"
+		//		},
+		//		'schema_movie_single': {
+		//			genre: 'Comedy',
+		//			popularity: 8
+		//		}
+		//	}, {
+		//		'type': ['schema_movie_single', 'object'],
+		//	}, function(err, users) {
+		//		done();
+		//	});
+		//});
 
 	});
 });

@@ -6,15 +6,12 @@ var Waterline = require('waterline');
 
 module.exports = Waterline.Collection.extend({
 
-  identity: 'schema_text',
+  identity: 'schema_movie_single',
   connection: 'semantic',
-  subclassof: ['object'],
 
   attributes: {
-    schema: 'string',
-  	object: {
-		model: 'object'
-	}
+    genre: 'string',
+    popularity: 'integer'
   }
 
 });

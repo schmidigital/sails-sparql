@@ -6,15 +6,12 @@ var Waterline = require('waterline');
 
 module.exports = Waterline.Collection.extend({
 
-  identity: 'object',
+  identity: 'node',
   connection: 'semantic',
 
+  virtual: 'true',
+
   attributes: {
-	label: 'string',
-	description: 'string',
-  	object: {
-		model: 'object'
-	}
   }
 
 });
