@@ -8,7 +8,7 @@ module.exports = Waterline.Collection.extend({
 
   identity: 'schema_movie',
   connection: 'semantic',
-  parent: ['object'],
+  parent: ['schema'],
 
   attributes: {
     genre: 'string',

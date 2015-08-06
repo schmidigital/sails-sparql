@@ -11,7 +11,7 @@ describe('Semantic Interface', function() {
 
 		it('should create a node using 2 custom types.', function(done) {
 			Semantic.Node.create({
-				'object': {
+				'schema': {
 					'label': 'Fantastic Movie',
 					'description': "This is an awesome parody!"
 				},
@@ -30,7 +30,7 @@ describe('Semantic Interface', function() {
 
 		//it('should create a node using 1 type and its class inheritance.', function(done) {
 		//	Semantic.Node.create({
-		//		'object': {
+		//		'schema': {
 		//			'label': 'Fantastic Movie',
 		//			'description': "This is an awesome parody!"
 		//		},
@@ -39,11 +39,35 @@ describe('Semantic Interface', function() {
 		//			popularity: 8
 		//		}
 		//	}, {
-		//		'type': ['schema_movie_single', 'object'],
+		//		'type': ['schema_movie_single', 'schema'],
 		//	}, function(err, users) {
 		//		done();
 		//	});
 		//});
+
+
+		it('should find a node and return both types.', function(done) {
+			Semantic.Node.find({
+				select: {
+					'schema': {
+						'label': true,
+						'description': true
+					},
+					'schema_movie': {
+						genre: true,
+						popularity: true
+					}
+				},
+				where: {
+					'type': 'schema_movie'
+				}
+			}, {
+				'custom_type': 'schema_movie'
+			}, function(err, node) {
+
+				done();
+			});
+		});
 
 	});
 });

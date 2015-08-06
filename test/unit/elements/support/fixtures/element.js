@@ -10,10 +10,10 @@ module.exports = Waterline.Collection.extend({
   connection: 'semantic',
 
   attributes: {
-    schema: 'string',
-  	object: {
-		model: 'object'
-	}
+		order: 'integer',
+  	schema: {
+			model: 'schema'
+		}
   }
 
 });
