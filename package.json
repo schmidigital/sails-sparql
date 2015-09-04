@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "node test/integration/runner -R spec -b"
+    "test": "node test/integration/runner -R spec -b",
+    "minitest": "node test/integration/temporary -R spec -b"
   },
   "repository": {
     "type": "git",
