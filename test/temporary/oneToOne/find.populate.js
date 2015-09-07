@@ -22,8 +22,6 @@ describe('Association Interface', function() {
 
           users = models;
 
-				console.log(users)
-
           var profileRecords = [
             { name: 'profile one', user: users[0].id, level : 1},
             { name: 'profile two', user: users[1].id, level : 2}
