@@ -50,23 +50,23 @@ describe('Association Interface', function() {
       // TEST METHODS
       ////////////////////////////////////////////////////
 
-      it('should return user when the populate criteria is added on profile', function(done) {
-        Associations.Profile.find()
-        .sort('level asc')
-        .populate('user')
-        .exec(function(err, profiles) {
-          assert(!err);
-
-          assert(profiles[0].user);
-          assert(profiles[1].user);
-
-          assert.equal(profiles[0].user.name, 'foo1');
-          assert.equal(profiles[1].user.name, 'bar1');
-
-          done();
-        });
-      });
-
+      //it('should return user when the populate criteria is added on profile', function(done) {
+      //  Associations.Profile.find()
+      //  .sort('level asc')
+      //  .populate('user')
+      //  .exec(function(err, profiles) {
+      //    assert(!err);
+      //
+      //    assert(profiles[0].user);
+      //    assert(profiles[1].user);
+      //
+      //    assert.equal(profiles[0].user.name, 'foo1');
+      //    assert.equal(profiles[1].user.name, 'bar1');
+      //
+      //    done();
+      //  });
+      //});
+      //
       //it('should return profile when the populate criteria is added on user', function(done) {
       //  Associations.User_resource.find()
       //  .populate('profile')
@@ -83,22 +83,22 @@ describe('Association Interface', function() {
       //    done();
       //  });
       //});
-      //
-      //it('should return a user object when the profile is undefined', function(done) {
-      //  Associations.User_resource.create({ name: 'foobar', profile: undefined }).exec(function(err, usr) {
-      //    assert(!err, err);
-      //
-      //    Associations.User_resource.find({ name: 'foobar' })
-      //    .populate('profile')
-      //    .exec(function(err, users) {
-      //      assert(!err);
-      //      assert(users[0].name);
-      //      assert(!users[0].profile, 'Expected `users[0].profile` to be falsy, but instead users[0] looks like ==> '+require('util').inspect(users[0], false, null));
-      //      done();
-      //    });
-      //  });
-      //});
-      //
+
+      it('should return a user object when the profile is undefined', function(done) {
+        Associations.User_resource.create({ name: 'foobar', profile: undefined }).exec(function(err, usr) {
+          assert(!err, err);
+
+          Associations.User_resource.find({ name: 'foobar' })
+          .populate('profile')
+          .exec(function(err, users) {
+            assert(!err);
+            assert(users[0].name);
+            assert(!users[0].profile, 'Expected `users[0].profile` to be falsy, but instead users[0] looks like ==> '+require('util').inspect(users[0], false, null));
+            done();
+          });
+        });
+      });
+
       //it('should return undefined for profile when the profile is a non-existent foreign key', function(done) {
       //  Associations.User_resource.create({ name: 'foobar2', profile: '123' }).exec(function(err, usr) {
       //    assert(!err, err);
