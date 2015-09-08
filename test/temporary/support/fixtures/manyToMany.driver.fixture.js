@@ -9,9 +9,13 @@ module.exports = Waterline.Collection.extend({
   tableName: 'driverTable',
   identity: 'driver',
   connection: 'associations',
-
-  // migrate: 'drop', 
+	autoPK: false,
+  // migrate: 'drop',
   attributes: {
+		id: {
+			type: 'string',
+			primaryKey: true
+		},
     name: 'string',
     taxis: {
       collection: 'taxi',
