@@ -65,7 +65,7 @@ new TestRunner({
 
     // Default adapter config to use.
     config: {
-				database: 'test',
+				database: 'adaptertest',
 				definition: 'test_schema',
 				adapter: 'sails-sparql',
 				host: 'localhost',
