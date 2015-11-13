@@ -1,4 +1,4 @@
-
+#Wichtig
 stardog:
   build: ./stardog
   working_dir: /stardog
