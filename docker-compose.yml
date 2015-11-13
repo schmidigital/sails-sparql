@@ -1,0 +1,19 @@
+
+stardog:
+  build: ./stardog
+  working_dir: /stardog
+  ports:
+    - "5820:5820"
+  command: 'stardog-admin server start --foreground'
+
+adapter:
+  build: .
+  volumes:
+    - .:/adapter
+  working_dir: /adapter
+  links:
+    - stardog
+  command: ./wait_to_start
+  environment:
+    - WAIT_START_CMD=['npm', 'test']
+    - WAIT_URL=http://stardog:5820

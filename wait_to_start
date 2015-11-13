@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+import urllib2
+import os
+import ast
+from subprocess import call
+
+while True:
+    try:
+        urllib2.urlopen(os.environ.get('WAIT_URL'))
+        print "Lifting the Sails!"
+        call(ast.literal_eval(os.environ.get('WAIT_START_CMD')))
+        break
+    except urllib2.HTTPError, e:
+        print(e.code)
+        continue
+    except urllib2.URLError, e:
+        continue

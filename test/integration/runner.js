@@ -69,7 +69,7 @@ new TestRunner({
 				database: 'test',
 				definition: 'test_schema',
 				adapter: 'sails-sparql',
-				host: 'localhost',
+				endpoint: 'http://localhost:5820',
 				port: 5820,
 				schema: false,
 				prefix: {
