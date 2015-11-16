@@ -66,7 +66,7 @@ new TestRunner({
 
     // Default adapter config to use.
     config: {
-				database: 'test',
+				database: 'test2',
 				definition: 'test_schema',
 				adapter: 'sails-sparql',
 				endpoint: 'http://localhost:5820',
@@ -76,6 +76,10 @@ new TestRunner({
 					abr: "mb:",
 					val: "http://rdf.mindbabble.com/ns/"
 				}
+    },
+
+    mocha: {
+        timeout: 60000
     },
 
     // The set of adapter interfaces to test against.

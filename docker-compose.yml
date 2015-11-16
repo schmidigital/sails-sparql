@@ -1,4 +1,6 @@
-#Wichtig
+# Wichtig Docker Binary extern auslagern
+# 2. Lösung: Sesame / Jena anbinden.
+
 stardog:
   build: ./stardog
   working_dir: /stardog
