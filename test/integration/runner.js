@@ -66,10 +66,10 @@ new TestRunner({
 
     // Default adapter config to use.
     config: {
-				database: 'test2',
+				database: 'test',
 				definition: 'test_schema',
 				adapter: 'sails-sparql',
-				endpoint: 'http://localhost:5820',
+				endpoint: 'http://localhost:5820/',
 				port: 5820,
 				schema: false,
 				prefix: {
