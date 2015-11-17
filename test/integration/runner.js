@@ -8,6 +8,7 @@
  * are tested. (e.g. `queryable`, `semantic`, etc.)
  */
 
+(function () {
 
 /**
  * Module dependencies
@@ -15,9 +16,10 @@
 
 var util = require('util');
 var mocha = require('mocha');
-var log = new (require('captains-log'))();
+//var log = new (require('captains-log'))();
 var TestRunner = require('waterline-adapter-tests');
 var Adapter = require('../../');
+var async = require('async');
 
 
 
@@ -39,16 +41,71 @@ catch (e) {
 
 
 
+// Deaktiviert, da sonst stardog.createDB nicht mehr funktioniert!
+//log.info('Testing `' + package.name + '`, a Sails/Waterline adapter.');
+//log.info('Running `waterline-adapter-tests` against ' + interfaces.length + ' interfaces...');
+//log.info('( ' + interfaces.join(', ') + ' )');
+//console.log();
+//log('Latest draft of Waterline adapter interface spec:');
+//log('http://links.sailsjs.org/docs/plugins/adapters/interfaces');
+//console.log();
 
 
-log.info('Testing `' + package.name + '`, a Sails/Waterline adapter.');
-log.info('Running `waterline-adapter-tests` against ' + interfaces.length + ' interfaces...');
-log.info('( ' + interfaces.join(', ') + ' )');
+console.log('Testing `' + package.name + '`, a Sails/Waterline adapter.');
+console.log('Running `waterline-adapter-tests` against ' + interfaces.length + ' interfaces...');
+console.log('( ' + interfaces.join(', ') + ' )');
 console.log();
-log('Latest draft of Waterline adapter interface spec:');
-log('http://links.sailsjs.org/docs/plugins/adapters/interfaces');
+console.log('Latest draft of Waterline adapter interface spec:');
+console.log('http://links.sailsjs.org/docs/plugins/adapters/interfaces');
 console.log();
 
+
+
+var Stardog = require('stardog')
+
+//
+//async.series([
+//      function(callback){
+//          console.log(1)
+//
+//          conn = new Stardog.Connection();
+//          conn.setEndpoint("http://localhost:5820/");
+//          conn.setCredentials("admin", "admin");
+//
+//
+//          var options = {
+//              "database" : "lol",
+//              "options" : { "index.type" : "disk" },
+//              "files": []
+//          };
+//
+//          conn.createDB(options, function (data, response) {
+//
+//              console.log(123)
+//              console.log(data)
+//
+//
+//              callback(null, 'one');
+//
+//          });
+//
+//
+//          // do some stuff ...
+//      },
+//      function(callback){
+//          console.log(2)
+//
+//          // do some more stuff ...
+//          callback(null, 'two');
+//      }
+//  ],
+//// optional callback
+//  function(err, results){
+//      console.log(3)
+//
+//      // results is now equal to ['one', 'two']
+//  });
+//
 
 
 
@@ -104,3 +161,4 @@ new TestRunner({
     // Full interface reference:
     // https://github.com/balderdashy/sails-docs/blob/master/adapter-specification.md
 });
+})();
