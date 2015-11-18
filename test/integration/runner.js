@@ -51,64 +51,6 @@ log('http://links.sailsjs.org/docs/plugins/adapters/interfaces');
 console.log();
 
 
-//console.log('Testing `' + package.name + '`, a Sails/Waterline adapter.');
-//console.log('Running `waterline-adapter-tests` against ' + interfaces.length + ' interfaces...');
-//console.log('( ' + interfaces.join(', ') + ' )');
-//console.log();
-//console.log('Latest draft of Waterline adapter interface spec:');
-//console.log('http://links.sailsjs.org/docs/plugins/adapters/interfaces');
-//console.log();
-
-
-
-var Stardog = require('stardog')
-
-//
-//async.series([
-//      function(callback){
-//          console.log(1)
-//
-//          conn = new Stardog.Connection();
-//          conn.setEndpoint("http://localhost:5820/");
-//          conn.setCredentials("admin", "admin");
-//
-//
-//          var options = {
-//              "database" : "lol",
-//              "options" : { "index.type" : "disk" },
-//              "files": []
-//          };
-//
-//          conn.createDB(options, function (data, response) {
-//
-//              console.log(123)
-//              console.log(data)
-//
-//
-//              callback(null, 'one');
-//
-//          });
-//
-//
-//          // do some stuff ...
-//      },
-//      function(callback){
-//          console.log(2)
-//
-//          // do some more stuff ...
-//          callback(null, 'two');
-//      }
-//  ],
-//// optional callback
-//  function(err, results){
-//      console.log(3)
-//
-//      // results is now equal to ['one', 'two']
-//  });
-//
-
-
-
 /**
  * Integration Test Runner
  *
@@ -123,7 +65,7 @@ new TestRunner({
 
     // Default adapter config to use.
     config: {
-				database: 'test',
+				database: 'test13',
 				definition: 'test_schema',
 				adapter: 'sails-sparql',
 				endpoint: 'http://localhost:5820/',
