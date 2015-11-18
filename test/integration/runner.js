@@ -16,7 +16,7 @@
 
 var util = require('util');
 var mocha = require('mocha');
-//var log = new (require('captains-log'))();
+var log = new (require('captains-log'))();
 var TestRunner = require('waterline-adapter-tests');
 var Adapter = require('../../');
 var async = require('async');
@@ -41,23 +41,23 @@ catch (e) {
 
 
 
-// Deaktiviert, da sonst stardog.createDB nicht mehr funktioniert!
-//log.info('Testing `' + package.name + '`, a Sails/Waterline adapter.');
-//log.info('Running `waterline-adapter-tests` against ' + interfaces.length + ' interfaces...');
-//log.info('( ' + interfaces.join(', ') + ' )');
-//console.log();
-//log('Latest draft of Waterline adapter interface spec:');
-//log('http://links.sailsjs.org/docs/plugins/adapters/interfaces');
-//console.log();
+ //Deaktiviert, da sonst stardog.createDB nicht mehr funktioniert!
+log.info('Testing `' + package.name + '`, a Sails/Waterline adapter.');
+log.info('Running `waterline-adapter-tests` against ' + interfaces.length + ' interfaces...');
+log.info('( ' + interfaces.join(', ') + ' )');
+console.log();
+log('Latest draft of Waterline adapter interface spec:');
+log('http://links.sailsjs.org/docs/plugins/adapters/interfaces');
+console.log();
 
 
-console.log('Testing `' + package.name + '`, a Sails/Waterline adapter.');
-console.log('Running `waterline-adapter-tests` against ' + interfaces.length + ' interfaces...');
-console.log('( ' + interfaces.join(', ') + ' )');
-console.log();
-console.log('Latest draft of Waterline adapter interface spec:');
-console.log('http://links.sailsjs.org/docs/plugins/adapters/interfaces');
-console.log();
+//console.log('Testing `' + package.name + '`, a Sails/Waterline adapter.');
+//console.log('Running `waterline-adapter-tests` against ' + interfaces.length + ' interfaces...');
+//console.log('( ' + interfaces.join(', ') + ' )');
+//console.log();
+//console.log('Latest draft of Waterline adapter interface spec:');
+//console.log('http://links.sailsjs.org/docs/plugins/adapters/interfaces');
+//console.log();
 
 
 
