@@ -68,8 +68,8 @@ new TestRunner({
 				database: 'test13',
 				definition: 'test_schema',
 				adapter: 'sails-sparql',
-				endpoint: 'http://localhost:5820/',
-				port: 5820,
+				endpoint: 'http://db.docker:8889/bigdata/sparql',
+				port: 8889,
 				schema: false,
 				prefix: {
 					abr: "mb:",
