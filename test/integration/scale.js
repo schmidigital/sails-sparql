@@ -25,7 +25,7 @@ var Adapter = require('../../');
 var package = {};
 var interfaces = [];
 try {
-    interfaces = ["../../../test/temporary"]
+    interfaces = ["../../../test/scale"]
 }
 catch (e) {
     throw new Error(
@@ -68,7 +68,7 @@ new TestRunner({
         database: 'test13',
         definition: 'test_schema',
         adapter: 'sails-sparql',
-        endpoint: 'http://db.docker:8889/bigdata/sparql',
+        endpoint: 'http://schmid.digital:8889/bigdata/sparql',
         port: 8889,
         schema: false,
         prefix: {
