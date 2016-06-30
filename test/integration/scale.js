@@ -65,11 +65,12 @@ new TestRunner({
 
     // Default adapter config to use.
     config: {
-        database: 'test13',
+        database: 'test',
         definition: 'test_schema',
         adapter: 'sails-sparql',
-        endpoint: 'http://schmid.digital:8889/bigdata/sparql',
-        port: 8889,
+        // endpoint: 'http://schmid.digital:9090/cumulus/sparql',
+        // endpoint: 'http://docker.dev:5820/test/query',
+        // endpoint: 'http://-docker.dev:8889/bigdata/sparql',
         schema: false,
         prefix: {
             abr: "mb:",

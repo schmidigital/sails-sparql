@@ -48,7 +48,7 @@
   "waterlineAdapter": {
     "type": "sails-sparql",
     "interfaces": [
-       "temporary"
+       "queryable"
     ],
     "waterlineVersion": "~0.10.0"
   },

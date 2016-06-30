@@ -13,6 +13,10 @@ module.exports = Waterline.Collection.extend({
   attributes: {
     first_name: 'string',
     last_name: 'string',
+    posts: {
+      collection: 'Post',
+      via: 'author'
+    },
     email: {
       type: 'string',
       columnName: 'emailAddress'
