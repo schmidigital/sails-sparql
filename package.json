@@ -1,6 +1,6 @@
 {
   "name": "sails-sparql",
-  "version": "0.10.0",
+  "version": "1.0.0",
   "description": "sails-sparql adapter for Sails / Waterline",
   "main": "lib/adapter.js",
   "directories": {
